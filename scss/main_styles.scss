@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+:root{
+    // color primary
+    --color-VeryDarkMagenta-tl-crdbg-rtd: hsl(300, 43%, 22%);
+    --color-SoftPink-vrfldByr: hsl(333, 80%, 67%);
+
+    // color neutral
+    --color-DarkGrayishMagenta-desc: hsl(303, 10%, 53%);
+    --color-LightGrayishMagenta-rtdbg-tsti: hsl(300, 24%, 96%);
+    --color-White: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.938rem;
+    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    grid-template-areas: 
+                "left right right"
+                "bottom bottom bottom";
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1100px;
+    row-gap: 2rem;
+    .left{
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .right{
+        grid-area: right;
+        align-items: center;
+        justify-items: end;
+        align-content: center;
+        gap: 1rem;
+    }
+    
+    .bottom{
+        grid-area: bottom;
+        gap: 1.5rem;
+    }
+}
+
+.left{
+    .title{
+        color: var(--color-VeryDarkMagenta-tl-crdbg-rtd);
+        font-size: 3.5rem;
+        line-height: normal;
+    }
+    .descript{
+        color: var(--color-DarkGrayishMagenta-desc);
+    }
+}
+
+
+.right{
+    .rate{
+        background-color: var(--color-LightGrayishMagenta-rtdbg-tsti);
+        color: var(--color-VeryDarkMagenta-tl-crdbg-rtd);
+        width: 367px;
+        font-weight: 700;
+        border-radius: .5rem;
+        padding: .7rem;
+        
+        justify-content:flex-start;
+
+        ul{
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+        li{
+            display: inline-block;
+        }
+    }
+    
+    
+}
+
+.bottom{
+    .card{
+        background-color: var(--color-VeryDarkMagenta-tl-crdbg-rtd);
+        padding: 2rem;
+        border-radius: .5rem;
+        
+
+        .testi{
+            margin-top: 1.5rem;
+        }
+    }
+
+    
+
+    .name{
+        color: var(--color-White);
+        font-weight: 700;
+    }
+
+    .role{
+        color: var(--color-SoftPink-vrfldByr);
+        font-weight: 500;
+    }
+
+    .testi{
+        color: var(--color-LightGrayishMagenta-rtdbg-tsti);
+    }
+}
+
+@mixin circleimg {
+    border-radius: 50%;
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.card{
+    .name-role{
+        display: flex
+        
+    }
+    
+    & img{
+        @include circleimg();
+    }
+}
+
+// responsive breakpoint
+@media (min-width: 56.25rem) {
+    body{
+        height: 100vh;
+    }
+    .container{
+        display: grid;
+    }
+    .right{
+        display: grid;
+        .rate{
+            display: flex;
+        }
+        .up{
+            margin-right: 100px;
+        }
+    
+        .middle{
+            margin-right: 50px;
+        }
+    }
+    .bottom{
+        display: flex;
+
+        .card{
+            height: 230px;
+        }
+
+        & .two{
+            margin-top: 1rem;
+        }
+    
+        & .three{
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media (max-width: 56.25rem) {
+    .container{
+        margin: 1.5rem;
+    }
+    .right{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 2rem 0;
+        
+        .rate{
+            gap: 1rem;
+            width: 100%;
+        }
+
+    }
+    .left{
+        text-align: center;
+        .title{
+            font-size: 2.6rem;
+        }
+    }
+    .bottom{
+        .card{
+            margin-bottom: 1rem;
+        }
+    }
+}
