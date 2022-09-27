@@ -13,7 +13,6 @@
 body{
     font-family: 'League Spartan', sans-serif;
     font-size: 0.938rem;
-    
     display: grid;
     justify-content: center;
     align-items: center;
@@ -131,6 +130,11 @@ body{
 // responsive breakpoint
 @media (min-width: 56.25rem) {
     body{
+        background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+    background-position: left -262px top -236px, right -304px bottom -300px;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed, fixed;
+    background-size: contain, contain;
         height: 100vh;
     }
     .container{
